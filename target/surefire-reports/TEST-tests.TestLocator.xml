@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tests.TestLocator" time="3.202" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="tests.TestLocator" time="2.878" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="webdriver.chrome.driver" value="/Users/aleksandrashineleva/Documents/chromedriver"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/Users/aleksandrashineleva/Library/Java/JavaVirtualMachines/openjdk-15/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/aleksandrashineleva/Desktop/SeleniumJava/target/surefire/surefirebooter1633075838587722597.jar /Users/aleksandrashineleva/Desktop/SeleniumJava/target/surefire 2020-10-20T15-22-37_602-jvmRun1 surefire4179866994838491247tmp surefire_016178809251655772170tmp"/>
+    <property name="sun.java.command" value="/Users/aleksandrashineleva/Desktop/SeleniumJava/target/surefire/surefirebooter2301512122185733132.jar /Users/aleksandrashineleva/Desktop/SeleniumJava/target/surefire 2020-10-21T07-45-15_624-jvmRun1 surefire17516253783284556638tmp surefire_017549952348360755746tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/aleksandrashineleva/Desktop/SeleniumJava/target/test-classes:/Users/aleksandrashineleva/Desktop/SeleniumJava/target/classes:/Users/aleksandrashineleva/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/aleksandrashineleva/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-java/4.0.0-alpha-1/selenium-java-4.0.0-alpha-1.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.0.0-alpha-1/selenium-edge-driver-4.0.0-alpha-1.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-firefox-xpi-driver/4.0.0-alpha-1/selenium-firefox-xpi-driver-4.0.0-alpha-1.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.0.0-alpha-1/selenium-firefox-driver-4.0.0-alpha-1.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.0.0-alpha-1/selenium-ie-driver-4.0.0-alpha-1.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/4.0.0-alpha-1/selenium-opera-driver-4.0.0-alpha-1.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.0.0-alpha-1/selenium-safari-driver-4.0.0-alpha-1.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-support/4.0.0-alpha-1/selenium-support-4.0.0-alpha-1.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/aleksandrashineleva/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/aleksandrashineleva/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/aleksandrashineleva/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/aleksandrashineleva/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/Users/aleksandrashineleva/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/aleksandrashineleva/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/Users/aleksandrashineleva/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/Users/aleksandrashineleva/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/aleksandrashineleva/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/aleksandrashineleva/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/aleksandrashineleva/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/aleksandrashineleva/Desktop/SeleniumJava/target/surefire/surefirebooter1633075838587722597.jar"/>
+    <property name="surefire.real.class.path" value="/Users/aleksandrashineleva/Desktop/SeleniumJava/target/surefire/surefirebooter2301512122185733132.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="15+36-1562"/>
@@ -55,5 +55,5 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="locator_test" classname="tests.TestLocator" time="3.202"/>
+  <testcase name="locator_test" classname="tests.TestLocator" time="2.878"/>
 </testsuite>

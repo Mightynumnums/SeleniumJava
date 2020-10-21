@@ -37,6 +37,13 @@ public class TestLogin {
 //                driver.findElement(By.cssSelector(".flash.success")).isDisplayed());
     }
 
+    @Test
+    public void failed() {
+        login.with("tomsmith", "SuperSecretPassword!");
+        assertTrue("success message not present",
+        login.successMessagePresent());
+    }
+
     @After
     public void tearDown() {
         driver.quit();
