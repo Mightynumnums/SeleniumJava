@@ -19,14 +19,17 @@ public class Login extends Base {
         assertTrue("The login form is not present",
                 driver.findElement(loginFormLocator).isDisplayed());
     }
+
     public void with(String username, String password) {
         type(username, usernameLocator);
         type(password, passwordLocator);
         click(submitButton);
     }
+
     public Boolean successMessagePresent() {
         return isDisplayed(successMessageLocator);
     }
+
     public Boolean failureMessagePresent() {
         return isDisplayed(failureMessageLocator);
     }

@@ -3,6 +3,12 @@ package pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
+import static tests.Config.*;
+
 
 public class Base {
 
@@ -13,7 +19,12 @@ public class Base {
     }
 
     public void visit(String url) {
-        driver.get(url);
+//        driver.get(url);
+        if (url.contains("http")) {
+            driver.get(url);
+        } else {
+            driver.get(baseUrl + url);
+        }
     }
 
     public WebElement find(By locator) {
@@ -34,5 +45,15 @@ public class Base {
         } catch (org.openqa.selenium.NoSuchElementException exception) {
             return false;
         }
+    }
+
+    public Boolean isDisplayed(By locator, Integer timeout) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout).getSeconds());
+            wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        } catch (org.openqa.selenium.TimeoutException exception) {
+            return false;
+        }
+        return true;
     }
 }
