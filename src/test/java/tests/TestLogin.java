@@ -1,5 +1,3 @@
-
-//filename: tests/TestLogin.java
 package tests;
 
 import org.junit.After;
@@ -10,7 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pageobjects.Login;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
+// line above with * means import all Asserts
 
 public class TestLogin {
 
@@ -37,11 +36,17 @@ public class TestLogin {
 //                driver.findElement(By.cssSelector(".flash.success")).isDisplayed());
     }
 
+//    @Test
+//    public void failed() {
+//        login.with("tomsmith", "SuperSecretPassword!");
+//        assertTrue("success message not present",
+//        login.failureMessagePresent());
+//    }
+
     @Test
     public void failed() {
-        login.with("tomsmith", "SuperSecretPassword!");
-        assertTrue("success message not present",
-        login.successMessagePresent());
+        login.with("tomsmith", "badpassword");
+        assertFalse("success message was present after providing bogus credentials", login.successMessagePresent());
     }
 
     @After
@@ -49,3 +54,4 @@ public class TestLogin {
         driver.quit();
     }
 }
+

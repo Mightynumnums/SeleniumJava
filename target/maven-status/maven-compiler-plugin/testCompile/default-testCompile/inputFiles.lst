@@ -1,2 +1,3 @@
-/Users/aleksandrashineleva/Desktop/SeleniumJava/src/test/java/companyname/TestLogin.java
-/Users/aleksandrashineleva/Desktop/SeleniumJava/src/test/java/companyname/TestLocator.java
+/Users/aleksandrashineleva/Desktop/SeleniumJava/src/test/java/pageobjects/Login.java
+/Users/aleksandrashineleva/Desktop/SeleniumJava/src/test/java/tests/TestLogin.java
+/Users/aleksandrashineleva/Desktop/SeleniumJava/src/test/java/pageobjects/Base.java
