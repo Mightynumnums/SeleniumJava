@@ -1,7 +1,12 @@
 package tests;
 
+import com.saucelabs.saucerest.DataCenter;
+import com.saucelabs.saucerest.SauceREST;
 import org.junit.Rule;
 import org.junit.rules.ExternalResource;
+import org.junit.rules.TestRule;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,6 +22,10 @@ import static tests.Config.*;
 public class BaseTest {
 
     protected WebDriver driver;
+    private String testName;
+    private String sessionId;
+    private SauceREST sauceClient;
+
 
     @Rule
     public ExternalResource resource = new ExternalResource() {
@@ -27,6 +36,7 @@ public class BaseTest {
                 MutableCapabilities sauceOptions = new MutableCapabilities();
                 sauceOptions.setCapability("username", sauceUser);
                 sauceOptions.setCapability("accessKey", sauceKey);
+                sauceOptions.setCapability("name", testName);
                 MutableCapabilities capabilities = new MutableCapabilities();
                 capabilities.setCapability("browserName", browserName);
                 capabilities.setCapability("browserVersion", browserVersion);
@@ -34,6 +44,8 @@ public class BaseTest {
                 capabilities.setCapability("sauce:options", sauceOptions);
                 String sauceUrl = String.format("https://ondemand.saucelabs.com/wd/hub");
                 driver = new RemoteWebDriver(new URL(sauceUrl), capabilities);
+                sessionId = ((RemoteWebDriver) driver).getSessionId().toString();
+                sauceClient = new SauceREST(sauceUser, sauceKey, DataCenter.US);
             } else if (host.equals("localhost")) {
                 if (browserName.equals("firefox")) {
                     System.setProperty("webdriver.gecko.driver",
@@ -44,6 +56,29 @@ public class BaseTest {
                     ChromeOptions browserOptions = new ChromeOptions();
                     driver = new ChromeDriver();
                 }
+            }
+        }
+
+        @Rule
+        public TestRule watcher = new TestWatcher() {
+            @Override
+            protected void starting(Description description) {
+                testName = description.getDisplayName();
+            }
+        };
+
+        @Override
+        protected void failed(Throwable throwable, Description description) {
+            if (host.equals("saucelabs")) {
+                sauceClient.jobFailed(sessionId);
+                System.out.println(String.format("https://saucelabs.com/tests/%s", sessionId));
+            }
+        }
+
+        @Override
+        protected void succeeded(Description description) {
+            if (host.equals("saucelabs")) {
+                sauceClient.jobPassed(sessionId);
             }
         }
 
