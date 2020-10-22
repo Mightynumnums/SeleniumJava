@@ -2,7 +2,6 @@ package tests;
 
 import com.saucelabs.saucerest.DataCenter;
 import com.saucelabs.saucerest.SauceREST;
-
 import org.junit.Rule;
 import org.junit.rules.ExternalResource;
 import org.junit.rules.TestRule;
@@ -56,6 +55,22 @@ public class BaseTest {
                     ChromeOptions browserOptions = new ChromeOptions();
                     driver = new ChromeDriver();
                 }
+            }
+            else if (host.equals("saucelabs-tunnel")) {
+                MutableCapabilities sauceOptions = new MutableCapabilities();
+                sauceOptions.setCapability("username", sauceUser);
+                sauceOptions.setCapability("accessKey", sauceKey);
+                sauceOptions.setCapability("name", testName);
+                sauceOptions.setCapability("tunnelIdentifier", sauceTunnel);
+                MutableCapabilities capabilities = new MutableCapabilities();
+                capabilities.setCapability("browserName", browserName);
+                capabilities.setCapability("browserVersion", browserVersion);
+                capabilities.setCapability("platformName", platformName);
+                capabilities.setCapability("sauce:options", sauceOptions);
+                String sauceUrl = String.format("https://ondemand.saucelabs.com/wd/hub");
+                driver = new RemoteWebDriver(new URL(sauceUrl), capabilities);
+                sessionId = ((RemoteWebDriver) driver).getSessionId().toString();
+                sauceClient = new SauceREST(sauceUser, sauceKey, DataCenter.US);
             }
         }
 
