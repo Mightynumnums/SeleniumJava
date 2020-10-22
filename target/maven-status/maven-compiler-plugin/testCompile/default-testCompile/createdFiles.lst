@@ -3,7 +3,10 @@ tests/TestDynamicLoading.class
 pageobjects/Base.class
 tests/TestLogin.class
 tests/Config.class
+tests/groups/All.class
 tests/BaseTest$2.class
+tests/groups/Deep.class
+tests/groups/Shallow.class
 tests/BaseTest.class
 pageobjects/DynamicLoading.class
 pageobjects/Login.class

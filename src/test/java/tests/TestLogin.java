@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pageobjects.Login;
 import static org.junit.Assert.*;
+import org.junit.experimental.categories.Category;
+import tests.groups.Shallow;
 // line above with * means import all Asserts
 
 public class TestLogin extends BaseTest {
@@ -25,6 +27,7 @@ public class TestLogin extends BaseTest {
     }
 
     @Test
+    @Category(Shallow.class)
     public void succeeded() {
         login.with("tomsmith", "SuperSecretPassword!");
         assertTrue("success message not present", login.successMessagePresent());
@@ -38,6 +41,7 @@ public class TestLogin extends BaseTest {
 //    }
 
     @Test
+    @Category(Shallow.class)
     public void failed() {
         login.with("tomsmith", "badpassword");
         assertFalse("success message was present after providing bogus credentials", login.successMessagePresent());

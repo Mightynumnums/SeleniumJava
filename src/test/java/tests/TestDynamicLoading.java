@@ -8,8 +8,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import pageobjects.DynamicLoading;
 
+import org.junit.experimental.categories.Category;
+import tests.groups.Deep;
+
 import static org.junit.Assert.assertTrue;
 
+@Category(Deep.class)
 public class TestDynamicLoading extends BaseTest {
 
 //    private WebDriver driver;

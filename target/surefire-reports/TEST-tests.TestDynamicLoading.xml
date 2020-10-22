@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.TestDynamicLoading" time="27.271" tests="2" errors="0" skipped="0" failures="0">
+<testsuite name="tests.TestDynamicLoading" time="29.816" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="15+36-1562"/>
     <property name="sun.boot.library.path" value="/Users/aleksandrashineleva/Library/Java/JavaVirtualMachines/openjdk-15/Contents/Home/lib"/>
-    <property name="host" value="saucelabs"/>
     <property name="maven.multiModuleProjectDirectory" value="/Users/aleksandrashineleva/Desktop/SeleniumJava"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
@@ -16,6 +15,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/Users/aleksandrashineleva/Desktop/SeleniumJava"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="groups" value="tests.groups.Deep"/>
     <property name="java.runtime.version" value="15+36-1562"/>
     <property name="os.arch" value="x86_64"/>
     <property name="java.io.tmpdir" value="/var/folders/cb/td3z4nss61n20wrjzwzfj2jw0000gn/T/"/>
@@ -41,7 +41,7 @@
     <property name="java.class.path" value="/usr/local/Cellar/maven/3.6.3_1/libexec/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="15"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -Dhost=saucelabs"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -Dgroups=tests.groups.Deep"/>
     <property name="java.home" value="/Users/aleksandrashineleva/Library/Java/JavaVirtualMachines/openjdk-15/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -57,6 +57,6 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="hiddenElementLoads" classname="tests.TestDynamicLoading" time="13.576"/>
-  <testcase name="elementAppears" classname="tests.TestDynamicLoading" time="13.695"/>
+  <testcase name="hiddenElementLoads" classname="tests.TestDynamicLoading" time="16.329"/>
+  <testcase name="elementAppears" classname="tests.TestDynamicLoading" time="13.487"/>
 </testsuite>
