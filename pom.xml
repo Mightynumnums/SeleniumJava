@@ -58,6 +58,7 @@
                     <threadCountMethods>30</threadCountMethods>
                     <useUnlimitedThreads>true</useUnlimitedThreads>
                     <redirectTestOutputToFile>false</redirectTestOutputToFile>
+                    <runOrder>random</runOrder>
                 </configuration>
                 <version>2.18.1</version>
             </plugin>
