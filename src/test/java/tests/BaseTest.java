@@ -2,22 +2,22 @@ package tests;
 
 import com.saucelabs.saucerest.DataCenter;
 import com.saucelabs.saucerest.SauceREST;
+
 import org.junit.Rule;
 import org.junit.rules.ExternalResource;
 import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
 import java.net.URL;
 
 import static tests.Config.*;
-
-
 
 public class BaseTest {
 
@@ -25,7 +25,6 @@ public class BaseTest {
     private String testName;
     private String sessionId;
     private SauceREST sauceClient;
-
 
     @Rule
     public ExternalResource resource = new ExternalResource() {
@@ -46,6 +45,7 @@ public class BaseTest {
                 driver = new RemoteWebDriver(new URL(sauceUrl), capabilities);
                 sessionId = ((RemoteWebDriver) driver).getSessionId().toString();
                 sauceClient = new SauceREST(sauceUser, sauceKey, DataCenter.US);
+
             } else if (host.equals("localhost")) {
                 if (browserName.equals("firefox")) {
                     System.setProperty("webdriver.gecko.driver",
@@ -59,13 +59,19 @@ public class BaseTest {
             }
         }
 
-        @Rule
-        public TestRule watcher = new TestWatcher() {
-            @Override
-            protected void starting(Description description) {
-                testName = description.getDisplayName();
-            }
-        };
+        @Override
+        protected void after() {
+            driver.quit();
+        }
+
+    };
+
+    @Rule
+    public TestRule watcher = new TestWatcher() {
+        @Override
+        protected void starting(Description description) {
+            testName = description.getDisplayName();
+        }
 
         @Override
         protected void failed(Throwable throwable, Description description) {
@@ -81,11 +87,5 @@ public class BaseTest {
                 sauceClient.jobPassed(sessionId);
             }
         }
-
-        @Override
-        protected void after() {
-            driver.quit();
-        }
-
     };
 }
