@@ -12,7 +12,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
 
 import java.net.URL;
 
@@ -44,6 +46,7 @@ public class BaseTest {
                 driver = new RemoteWebDriver(new URL(sauceUrl), capabilities);
                 sessionId = ((RemoteWebDriver) driver).getSessionId().toString();
                 sauceClient = new SauceREST(sauceUser, sauceKey, DataCenter.US);
+                Actions actions = new Actions(driver);
 
             } else if (host.equals("localhost")) {
                 if (browserName.equals("firefox")) {
